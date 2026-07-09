@@ -80,6 +80,13 @@ header{
   padding-left: 20vh;
   padding-top: 2vh;
 }
+.blog-menu {
+  list-style: none;
+  gap: 5rem;
+  position: relative;
+  display:inline-flex;
+  height: 70px;
+}
 a {
   text-decoration: none;
   color: #ff66c4;
@@ -303,6 +310,46 @@ a {
     }
 
 }
+.blogpost{
+  width: 90%;
+  padding-left: 10%;
+}
+.blogpost-cover{
+  color: white;
+  height: 300px;
+  position:relative;
+  overflow: hidden;
+}
+.blogpost-cover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+
+}
+.blogpost-title{
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blogpost-tag{
+  font-size:.9rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color: white;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blogpost-content{
+  padding-top: 10%;
+  background-color: white;
+  color:black
+}
+
 .letters{
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;

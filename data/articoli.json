@@ -1,18 +1,20 @@
 [
     {
-        "ID":0,
+        "ID":1,
         "title": "Where this all began",
+        "lang":"en",
         "tag":[],
         "cover":"img/cover-0.png",
         "preview":"Welcome to our safe place",
         "date":"07 Jul 2026",
         "author":"theeldestdaughter",
         "status":"published",
-        "paragraph":"Just had an(other) intrusive thought, went scrolling on Threads and found this meaningful post about eldest daughters trauma. I felt SO seen.\n\n I always knew I was an eldest daughter, both biologically and emotionally, but I always thought I was alone in this. That post opened my eyes: there was a whole community! That's when I decided we shouldn't feel lonely anymore and that's when I started building this space: here we are free to feel understood without paying money for an analyst and without the judgment of people who don't really get it. \n So here we are. I won't gatekeep: my space is your space, our space to just be, vent and console. \n Welcome!"
+        "file":"where-this-all-began.md"
     },
     {
-        "ID":1,
+        "ID":2,
         "title": "Forced to be super",
+        "lang":"en",
         "tag":["guilt",
                     "feeling unseen",
                     "people pleasing"],
@@ -21,6 +23,6 @@
         "date":"08 Jul 2026",
         "author":"theeldestdaughter",
         "status":"published",
-        "paragraph":"You know that need of always being 'perfect'? \n\n Oh well, you're never perfect, but at least you shouldn't moan. \n- you can't be tired after school: it's just your 'job'. \n- you can't be tired after work: there are worse occupations. \n- you can't even take your time to recover: you're not dead yet. \n\n I had a legit hospital document telling my foot was broken, but for my family it was just an 'excuse' for not being at my best. It didn't matter if my hands and wrists caused me pain after weeks of using the crutches: I should have maintained the standards of clean house they set for me and attend to social events no one really cared about.\n The irony is when my friends got to know about my accident, their first words were: >ok, so now you're clinically forced to rest \nSpoiler: it didn't happen. My family allowed my poor ass to rest for an entire day before they started expecting me to be productive as normal. In their minds, I could do everything, i just had to jump on one leg and put in more effort. When I pointed out my need for rest, I was just lazy. \n End of the story, I somehow achieved to lay on the couch but I never got to delegate the mental load and I will have their fingers pointed at me until I officially perish."
+        "file":"forced-to-be-super.md"
     }
 ]

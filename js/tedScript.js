@@ -89,9 +89,11 @@ function renderArticle(article, container){
             </p>
 
 
-            <button class="read-more">
-                Read more
-            </button>
+            <a href="article.html?id=${article.ID}">
+                <button class="read-more">
+                    Read more
+                </button>
+            </a>
 
 
             <div class="article-content hidden">
@@ -121,9 +123,11 @@ function renderPreview(article,container, index = null){
                 <h2>
                     ${article.title}
                 </h2>
-                <button class="read">
-                    Read 
-                </button>
+                <a href="article.html?id=${article.ID}">
+                    <button class="read">
+                        Read 
+                    </button>
+                </a>
             </div>
         </article>
     </a>
@@ -135,6 +139,35 @@ function renderPreview(article,container, index = null){
         articleElement.innerHTML = articleElement.innerHTML;
     }
     container.appendChild(articleElement);
+}
+function articlePage(){
+    const params = new URLSearchParams(window.location.search);
+    const articleId = Number(params.get("ID"));
+    fetch("data/articoli.json")
+    .then(response => response.json())
+    .then(articles => {
+
+        const blogpost = articles.find(
+            blogpost => blogpost.DI == articleId
+        );
+
+        document.getElementById("#blogpost-title").textContent = blogpost.title;
+
+        document.getElementById("#blogpost-author").textContent = blogpost.date + " | "+ blogpost.author;
+        document.getElementById("#blogpost-tag").textContent = blogpost.tag;
+        document.getElementById("#blogpost-cover").src = blogpost.cover;
+
+
+        fetch(`articles/${blogpost.file}`)
+            .then(response => response.text())
+            .then(markdown => {
+
+                document.getElementById("#blogpost-content").innerHTML = marked.parse(markdown);
+
+            });
+
+
+        });
 }
 /////////////////////////////////////////////////// UTILITIES /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function privacySetup(){

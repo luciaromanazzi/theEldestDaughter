@@ -29,7 +29,7 @@
     </nav>
 
   </header>
-  <main>
+  <main >
     <!--pagina1: landing-->
     <!--sezione 1 landing page con claim-->
     <section > 
@@ -39,58 +39,125 @@
       </div>
     </section>
     <!--sezione 2 preview blog -->
-    <section id="blog">
+    <section class="latest">
+      <div class="latest-description">
         <h1>Latest Stories</h1>
         <p>If you can relate, you're in the right place</p>
         <a href="blog.html">See more </a>
-        <div class="blog-container preview" data-limit="2">
 
-        </div>
+      </div>
+    
+      <div id="blog-preview" data-limit="3">
+        
+      </div>
     </section>
 
   </main>
 
   <footer>
     <div class="footer-container">
-      <div id="footer-sx">
-        <!--social links-->
-        <!--<article class="footer-member">
-          --pinterest--
-          <a href="https://www.pinterest.com/@theeldestdaughter" target="_blank">
-            <img src="img/pinterest.png" class="footer-icon">
-          </a>
-        </article>-->
-      </div>
-      <div id="footer-center">
+      <div class="footer-column">
         
         <p>© The Eldest Daughter 2026 - All rights reserved.
         </p>
-        <br>
+        
+        
+      </div>
+      <br>
+      <div class="footer-row">
         <article >
           <!--instagram-->
           <a href="https://www.instagram.com/the.eldest.daughter__/" target="_blank">
             <img src="img/instagram.png" class="footer-icon">
           </a>
         </article>
-        <article>
-          <!--threads-->
-          <a href="https://www.threads.com/@the.eldest.daughter__/" target="_blank">
-            <img src="img/instagram.png" class="footer-icon">
+          <!--pinterest
+        <article >
+          <a href="..." target="_blank">
+            <img src="img/pinterest.png" class="footer-icon">
           </a>
         </article>
+          -->
         <article>
-            <a href="..." >Privacy Policy</a>
+            <a href="#" id="privacy-link" >Privacy Policy</a>
         </article>
+        <!--cookie
         <article>
             <a href="..." >Cookie Policy</a>
         </article>
+        -->
       </div>
     </div>
   </footer>
 
 
-<script src="js/tedScript.js">
-  
+<div id="privacy-modal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="close-privacy" class="close-btn">
+            ×
+        </button>
+
+        <h2>Privacy Policy</h2>
+
+        <p>
+            The Eldest Daughter respects your privacy.<br>
+            At the moment, this website does not collect
+            personal information through forms, accounts,
+            comments or newsletters.
+        </p>
+
+        <p>
+            The website may process technical data necessary
+            for displaying the pages and ensuring the correct
+            functioning of the service.
+        </p>
+
+        <p>
+            If new features involving personal data collection
+            are introduced, this Privacy Policy will be updated
+            accordingly.
+        </p>
+
+    </div>
+
+</div>
+<!-- COOKIE POLICY
+<div id="cookie-modal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="close-cookie" class="close-btn">
+            ×
+        </button>
+
+        <h2>Cookie Policy</h2>
+
+        <p>
+            The Eldest Daughter respects your privacy.<br>
+            At the moment, this website does not collect
+            personal information through forms, accounts,
+            comments or newsletters.
+        </p>
+
+        <p>
+            The website may process technical data necessary
+            for displaying the pages and ensuring the correct
+            functioning of the service.
+        </p>
+
+        <p>
+            If new features involving personal data collection
+            are introduced, this Privacy Policy will be updated
+            accordingly.
+        </p>
+
+    </div>
+
+</div>
+-->
+<script src="js/tedScript.js" defer>
 </script>
 </body>
 </html>

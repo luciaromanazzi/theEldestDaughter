@@ -145,7 +145,7 @@ a {
 }
 .preview-body h2 {
 
-    font-size:3rem;
+    font-size:clamp(3rem, 4vw, 1.5rem);
     font-weight:400 ;
     letter-spacing: 0.1em;
     margin:1rem 0;
@@ -220,7 +220,7 @@ a {
 
 .article-body h2 {
 
-    font-size:3rem;
+    font-size:clamp(3rem, 4vw, 1.5rem);
     font-weight:400 ;
     letter-spacing: 0.1em;
     margin:1rem 0;
@@ -328,7 +328,7 @@ a {
 
 }
 .blogpost-title{
-  font-size: 4.5rem;
+  font-size: clamp(4.5rem, 8vw, 2rem);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -443,7 +443,7 @@ body {
 /* 5. Components */
 #claim{
     color: whitesmoke;
-    font-size: 100px;
+    font-size: clamp(100px, 8vw, 2rem);
     padding:10vh;
     
 }

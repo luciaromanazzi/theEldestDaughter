@@ -115,7 +115,7 @@ function renderPreview(article,container, index = null){
     articleElement.classList.add("blog-card");
     const breakline = "<hr>"
     articleElement.innerHTML = `
-    <a href="${article.ID}.html">
+    <a href="article.html?id=${article.ID}">
         <article class="preview-card">
             <div class="preview-body">
                 <span class="preview-category">
@@ -195,37 +195,7 @@ function articlePage(){
 
         });
 }
-function getPreviousArticle(id){
-    fetch("data/articoli.json")
-    .then(response => response.json())
-    .then(articles => {
 
-        let blogpost = articles.find(
-            item => item.ID == articleId
-        );
-        if (!blogpost) return;
-        let previousId = articleId+1;
-        let nextId = articleId-1;
-        document.getElementById("previous").onclick.call(getPreviousArticle(previousId));
-        document.getElementById("next").onclick.call(getPreviousArticle(nextId));
-        document.getElementById("blogpost-title").textContent = blogpost.title;
-
-        document.getElementById("blogpost-author").textContent = blogpost.date + " | "+ blogpost.author;
-        document.getElementById("blogpost-tag").textContent = blogpost.tag;
-        document.getElementById("blogpost-img").src = blogpost.cover;
-
-
-        fetch(`articles/${blogpost.file}`)
-            .then(response => response.text())
-            .then(markdown => {
-
-                document.getElementById("blogpost-content").innerHTML = marked.parse(markdown);
-
-            });
-
-
-        });
-}
 /////////////////////////////////////////////////// UTILITIES /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function privacySetup(){
     const privacyLink = document.querySelector("#privacy-link");

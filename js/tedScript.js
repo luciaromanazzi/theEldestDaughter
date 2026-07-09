@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadArticles();
     loadPreview();
     privacySetup();
+    articlePage();
 });
 function loadArticles(){
     fetch("data/articoli.json")
@@ -142,27 +143,83 @@ function renderPreview(article,container, index = null){
 }
 function articlePage(){
     const params = new URLSearchParams(window.location.search);
-    const articleId = Number(params.get("ID"));
+    const articleId = Number(params.get("id"));
     fetch("data/articoli.json")
     .then(response => response.json())
     .then(articles => {
 
-        const blogpost = articles.find(
-            blogpost => blogpost.DI == articleId
+        let blogpost = articles.find(
+            item => item.ID == articleId
+        );
+        if (!blogpost) return;
+        const currentIndex = articles.findIndex(
+            item => item.ID === articleId
         );
 
-        document.getElementById("#blogpost-title").textContent = blogpost.title;
+        const previousPost = articles[currentIndex + 1];
+        const nextPost = articles[currentIndex - 1];
+        const previousLink = document.getElementById("previous");
+        const nextLink = document.getElementById("next");
 
-        document.getElementById("#blogpost-author").textContent = blogpost.date + " | "+ blogpost.author;
-        document.getElementById("#blogpost-tag").textContent = blogpost.tag;
-        document.getElementById("#blogpost-cover").src = blogpost.cover;
+
+        if (previousPost) {
+            previousLink.href = `article.html?id=${previousPost.ID}`;
+            previousLink.textContent = `← ${previousPost.title}`;
+        }else{
+            previousLink.hidden;
+        }
+
+
+        if (nextPost) {
+            nextLink.href = `article.html?id=${nextPost.ID}`;
+            nextLink.textContent = `${nextPost.title} →`;
+        }else{
+            nextLink.hidden;
+        }
+
+        document.getElementById("blogpost-title").textContent = blogpost.title;
+
+        document.getElementById("blogpost-author").textContent = blogpost.date + " | "+ blogpost.author;
+        document.getElementById("blogpost-tag").textContent = blogpost.tag;
+        document.getElementById("blogpost-img").src = blogpost.cover;
 
 
         fetch(`articles/${blogpost.file}`)
             .then(response => response.text())
             .then(markdown => {
 
-                document.getElementById("#blogpost-content").innerHTML = marked.parse(markdown);
+                document.getElementById("blogpost-content").innerHTML = marked.parse(markdown);
+
+            });
+
+
+        });
+}
+function getPreviousArticle(id){
+    fetch("data/articoli.json")
+    .then(response => response.json())
+    .then(articles => {
+
+        let blogpost = articles.find(
+            item => item.ID == articleId
+        );
+        if (!blogpost) return;
+        let previousId = articleId+1;
+        let nextId = articleId-1;
+        document.getElementById("previous").onclick.call(getPreviousArticle(previousId));
+        document.getElementById("next").onclick.call(getPreviousArticle(nextId));
+        document.getElementById("blogpost-title").textContent = blogpost.title;
+
+        document.getElementById("blogpost-author").textContent = blogpost.date + " | "+ blogpost.author;
+        document.getElementById("blogpost-tag").textContent = blogpost.tag;
+        document.getElementById("blogpost-img").src = blogpost.cover;
+
+
+        fetch(`articles/${blogpost.file}`)
+            .then(response => response.text())
+            .then(markdown => {
+
+                document.getElementById("blogpost-content").innerHTML = marked.parse(markdown);
 
             });
 

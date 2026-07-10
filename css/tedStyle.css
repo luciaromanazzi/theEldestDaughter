@@ -151,7 +151,7 @@ a {
 }
 .preview-body h2 {
 
-    font-size:4vw;
+    font-size:3vw;
     font-weight:400 ;
     letter-spacing: 0.1em;
     margin:1rem 0;
@@ -217,7 +217,7 @@ a {
 .article-author {
 
     font-size:.1.5vw;
-    font-weight: bold;
+    letter-spacing:.2vw;
     color: black;
 
 }

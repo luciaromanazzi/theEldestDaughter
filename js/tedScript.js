@@ -54,13 +54,15 @@ function loadPreview(limit){
     });
 }
 function sortArticles(articles) {
-    return articles.sort((a, b) => b.ID - a.ID);
+    return articles.sort((a, b) => 
+        new Date(b.lastUpdated) - new Date(a.lastUpdated)
+    );
 }
 function renderArticle(article, container){
     const articleElement = document.createElement("article");
 
     articleElement.classList.add("blog-card");
-
+    let date = formatDate(article.lastUpdated);
     articleElement.innerHTML = `
 
     <article class="article-card">
@@ -70,27 +72,25 @@ function renderArticle(article, container){
         <div class="article-body">
 
             <span class="article-category">
-                ${article.date} - 
-            </span>
-            <span class="article-author">
+                ${date} - 
                 @ ${article.author}
             </span><br>
             <span class="article-category">
-                ${article.tag}
+                ${article.tags.join(", ")}
             </span>
 
 
             <h2>
-                ${article.title}
+                ${article.translations.en.title}
             </h2>
 
 
             <p class="article-preview">
-                ${article.preview}
+                ${article.translations.en.preview}
             </p>
 
 
-            <a href="article.html?id=${article.ID}">
+            <a href="article.html?id=${article.id}">
                 <button class="read-more">
                     Read more
                 </button>
@@ -111,20 +111,20 @@ function renderArticle(article, container){
 }
 function renderPreview(article,container, index = null){
     const articleElement = document.createElement("article");
-    
+    let date = formatDate(article.lastUpdated);
     articleElement.classList.add("blog-card");
     const breakline = "<hr>"
     articleElement.innerHTML = `
-    <a href="article.html?id=${article.ID}">
+    <a href="article.html?id=${article.id}">
         <article class="preview-card">
             <div class="preview-body">
                 <span class="preview-category">
-                    ${article.date}
+                    ${date}
                 </span>
                 <h2>
-                    ${article.title}
+                    ${article.translations.en.title}
                 </h2>
-                <a href="article.html?id=${article.ID}">
+                <a href="article.html?id=${article.id}">
                     <button class="read">
                         Read 
                     </button>
@@ -141,7 +141,7 @@ function renderPreview(article,container, index = null){
     }
     container.appendChild(articleElement);
 }
-function articlePage(){
+function articlePage(language = "en"){
     const params = new URLSearchParams(window.location.search);
     const articleId = Number(params.get("id"));
     fetch("data/articoli.json")
@@ -149,42 +149,43 @@ function articlePage(){
     .then(articles => {
 
         let blogpost = articles.find(
-            item => item.ID == articleId
+            item => item.id == articleId
         );
         if (!blogpost) return;
         const currentIndex = articles.findIndex(
-            item => item.ID === articleId
+            item => item.id === articleId
         );
 
         const previousPost = articles[currentIndex + 1];
         const nextPost = articles[currentIndex - 1];
         const previousLink = document.getElementById("previous");
         const nextLink = document.getElementById("next");
-
+        //from `article.html?id=${previousPost.id}` 
+        //to blogpost.translations.en.file
 
         if (previousPost) {
-            previousLink.href = `article.html?id=${previousPost.ID}`;
-            previousLink.textContent = `← ${previousPost.title}`;
+            previousLink.href = previousPost.translations[language].file;
+            previousLink.textContent = `← ${previousPost.translations[language].title}`;
         }else{
-            previousLink.hidden;
+            previousLink.hidden = true;
         }
 
 
         if (nextPost) {
-            nextLink.href = `article.html?id=${nextPost.ID}`;
-            nextLink.textContent = `${nextPost.title} →`;
+            nextLink.href = nextPost.translations[language].file;
+            nextLink.textContent = `${nextPost.translations[language].title} →`;
         }else{
-            nextLink.hidden;
+            nextLink.hidden = true;
         }
 
-        document.getElementById("blogpost-title").textContent = blogpost.title;
+        document.getElementById("blogpost-title").textContent = blogpost.translations[language].title;
 
-        document.getElementById("blogpost-author").textContent = blogpost.date + " | "+ blogpost.author;
-        document.getElementById("blogpost-tag").textContent = blogpost.tag;
+        document.getElementById("blogpost-author").textContent = blogpost.lastUpdated + " | "+ blogpost.author;
+        document.getElementById("blogpost-tag").textContent = blogpost.tags.join(", ");
         document.getElementById("blogpost-img").src = blogpost.cover;
 
-
-        fetch(`articles/${blogpost.file}`)
+        //let postPath = blogpost.translations[language].file.split("/")[1];
+        fetch(blogpost.translations[language].file)
             .then(response => response.text())
             .then(markdown => {
 
@@ -221,4 +222,13 @@ function privacySetup(){
             }
         });
     }
+}
+function formatDate(dateString, language = "en-GB") {
+    const date = new Date(dateString);
+
+    return date.toLocaleDateString(language, {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    });
 }

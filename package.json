@@ -1,0 +1,23 @@
+{
+  "name": "theeldestdaughter",
+  "version": "1.0.0",
+  "description": "A digital community project exploring the invisible experiences, responsibilities and emotions often associated with being the eldest daughter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciaromanazzi/theEldestDaughter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luciaromanazzi/theEldestDaughter/issues"
+  },
+  "homepage": "https://github.com/luciaromanazzi/theEldestDaughter#readme",
+  "dependencies": {
+    "inquirer": "^9.3.8"
+  }
+}

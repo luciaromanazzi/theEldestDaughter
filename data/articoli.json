@@ -1,28 +1,48 @@
 [
     {
-        "ID":1,
-        "title": "Where this all began",
-        "lang":"en",
-        "tag":[],
-        "cover":"img/cover-0.png",
-        "preview":"Welcome to our safe place",
-        "date":"07 Jul 2026",
+        "id":1,
+        "tags":[],
+        "cover":"img/cover/cover-1.png",
+        "lastUpdated":"2026-07-07",
         "author":"theeldestdaughter",
         "status":"published",
-        "file":"where-this-all-began.md"
+        "datePublished":"2026-07-07",
+        "contentType":"article",
+        "translations":{
+            "en":{
+                "title":"Where this all began",
+                "preview":"Welcome to our safe place",
+                "file":"articles/where-this-all-began/en.md"
+            },
+            "it":{
+                "title":"L'inizio di tutto",
+                "preview":"Benvenuta nel nostro posto sicuro.",
+                "file":"articles/where-this-all-began/it.md"
+            }
+        }
     },
     {
-        "ID":2,
-        "title": "Forced to be super",
-        "lang":"en",
-        "tag":["guilt",
+        "id":2,
+        "tags":["guilt",
                     "feeling unseen",
                     "people pleasing"],
-        "cover":"img/cover-1.png",
-        "preview":"You know that need of always being 'perfect'? \n\n Oh well, you're never perfect",
-        "date":"08 Jul 2026",
+        "cover":"img/cover/cover-2.png",
+        "lastUpdated":"2026-07-08",
         "author":"theeldestdaughter",
         "status":"published",
-        "file":"forced-to-be-super.md"
+        "datePublished":"2026-07-08",
+        "contentType":"community-story",
+        "translations":{
+            "en":{
+                "title":"Forced to be super",
+                "preview":"You know that need of always being 'perfect'? \n\n Oh well, you're never perfect",
+                "file":"articles/forced-to-be-super/en.md"
+            },
+            "it":{
+                "title":"Pure i superpoteri",
+                "preview":"Ti chiedono di essere sempre perfetta, ma per loro non lo sarai mai",
+                "file":"articles/forced-to-be-super/it.md"
+            }
+        }
     }
 ]

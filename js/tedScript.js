@@ -144,6 +144,7 @@ function renderPreview(article,container, index = null){
 function articlePage(language = "en"){
     const params = new URLSearchParams(window.location.search);
     const articleId = Number(params.get("id"));
+    const lang = params.get("language") || "en";
     fetch("data/articoli.json")
     .then(response => response.json())
     .then(articles => {
@@ -164,7 +165,7 @@ function articlePage(language = "en"){
         //to blogpost.translations.en.file
 
         if (previousPost) {
-            previousLink.href = previousPost.translations[language].file;
+            previousLink.href = `article.html?id=${previousPost.id}&lang=${language}`;
             previousLink.textContent = `← ${previousPost.translations[language].title}`;
         }else{
             previousLink.hidden = true;
@@ -172,7 +173,7 @@ function articlePage(language = "en"){
 
 
         if (nextPost) {
-            nextLink.href = nextPost.translations[language].file;
+            nextLink.href = `article.html?id=${nextPost.id}&lang=${language}`;
             nextLink.textContent = `${nextPost.translations[language].title} →`;
         }else{
             nextLink.hidden = true;

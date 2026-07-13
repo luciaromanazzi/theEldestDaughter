@@ -54,14 +54,14 @@
             "people pleasing",
             "pushing too hard"
         ],
-        "cover": "img/cover/default.png",
+        "cover": "img/cover/cover-3.png",
         "lastUpdated": "2026-07-12",
         "author": "theeldestdaughter",
         "status": "draft",
         "translations": {
             "en": {
                 "title": "Impossible expectations",
-                "preview": "If you're a proper wife, you've probably been an unpaid maid",
+                "preview": "Don't set the bar too high",
                 "file": "articles/impossible-expectations/en.md"
             }
         }

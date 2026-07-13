@@ -1,2 +1,13 @@
-# Titolo articolo
+Truth is, the most irrealistic expectations come from ouserlves. 
 
+We decided that we wanted our parents to smile at 3yo, we decided that we wanted more from life at 16, we decided to never settle for less at 30. 
+Too bad the rest of the world didn't choose the same options. I've known plenty of people that are good with basic contacts with their (apparently) functional families, that are good with ordinary lives between work and pre-cooked meals, that married the father of their unplanned child.
+
+Before you think of it: I'm not judging. I've just become very good at knowing when a situation doesn't suit me. I've always felt like I was somewhow special: I mean, my imaginary friend was the *Greek God Poseidon*, what are we even talking about? Jokes aside, I don't really like to judge, therefore I don't accept to be judged. 
+I've spent the last few days questioning my choice of not going to a close friend's bachelorette. Do I love her? Absolutely. It simply wasn't my place and time to be there. 
+Planning a bachelorette takes a lot of time and effort these days, and I couldn't provide either. 
+
+As a start, the group chat was kinda busy if you ask me (like 10+ people) and I'm not a group chat girlie. They organized a whole weekend abroad, which is totally Instagram-vibed, but also expensive af. The mood was clearly "wild nights", which couldn't be more distant from the person I am. Long story short, I stayed in the group chat 'cause I love the bride to be and wanted to partecipate in some way (digital presence counts, right?), but I told myself out of the event months ago. Now they shared the pics and I'm so happy they enjoyed every moment, but I'm also really happy I wasn't involved. I couldn't stand a 3 days rush between clubs, lack of sleep and expensive dinners. I would've killed the mood and that was not my intention, not to mention the injury part (backstory <a href="article.html?id=2">here</a>) which would have slowed everyone down.
+
+The point is, I love my friend, I will always be there for her, I will be cheering and partying at her wedding. I just didn't fit at her bachelorette.
+It took me a lot of work to understand this, but now I know that the affection I feel for my close ones doesn't have to invalidate who I am. I can refuse to participate in an event even if I care. I don't have to fulfill my own impossible expectations, 'cause no one else is and it's perfectly fair. Good news: **you don't have either**. 

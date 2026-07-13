@@ -181,7 +181,7 @@ function articlePage(language = "en"){
 
         document.getElementById("blogpost-title").textContent = blogpost.translations[language].title;
 
-        document.getElementById("blogpost-author").textContent = blogpost.lastUpdated + " | "+ blogpost.author;
+        document.getElementById("blogpost-author").textContent = formatDate(blogpost.lastUpdated) + " | "+ blogpost.author;
         document.getElementById("blogpost-tag").textContent = blogpost.tags.join(", ");
         document.getElementById("blogpost-img").src = blogpost.cover;
 

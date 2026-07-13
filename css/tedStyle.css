@@ -324,18 +324,19 @@ a {
   height: 300px;
   position:relative;
   overflow: hidden;
+  background-color: black;
 }
 .blogpost-cover img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.3;
 
 }
 .blogpost-title{
-  font-size: 7vw;
+  font-size: 6vw;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

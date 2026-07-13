@@ -73,12 +73,6 @@ async function askArticleData() {
             message: "Tag (separati da virgola):"
         },
         {
-            type: "input",
-            name: "cover",
-            message: "Cover:",
-            default: "img/cover/default.png"
-        },
-        {
             type : "input",
             name:"language",
             message:"Lingua:",
@@ -97,14 +91,14 @@ async function askArticleData() {
 function buildArticle(answers, articles) {
 
     const slug = createSlug(answers.title);
-
+    let newID = nextId(articles);
     return {
-        id: nextId(articles),
+        id: newID,
         slug: slug,
         tags: answers.tags
             ? answers.tags.split(",").map(tag => tag.trim())
             : [],
-        cover: answers.cover,
+        cover: "img/cover/cover-"+newID+".png",
         lastUpdated: today(),
         author: answers.author,
         status: "draft",
